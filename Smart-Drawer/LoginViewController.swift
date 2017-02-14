@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    
     @IBAction func LoginButton(_ sender: Any) {
         //Popup message
         let invalidAccount = UIAlertController(title: "Incorrect username/password", message: "Please re-enter your information", preferredStyle: UIAlertControllerStyle.alert)
@@ -48,7 +47,7 @@ class LoginViewController: UIViewController {
     }
     */
     @IBAction func BackToSearch(_ sender: Any) {
-        performSegue(withIdentifier: "ReturnToSearch", sender: self)
+        performSegue(withIdentifier: "BackToHome", sender: self)
     }
 
 }

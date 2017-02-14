@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // Init View
     @IBOutlet weak var usrPIN: UITextField!
+    @IBOutlet weak var accountbtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         // Do any additional setup after loading the view, typically from a nib.
+    
+        // Change Log In button text
+        accountbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        accountbtn.titleLabel?.textAlignment = NSTextAlignment.center
+        accountbtn.setTitle("Minor Emergency?\nLog In or Create Account", for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +54,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Go To Account Screen
+    @IBAction func GoToAcc(_ sender: Any) {
+        
+    performSegue(withIdentifier: "HomeToAccount", sender: self)
+    }
+    
+    // Limits text field to 4 digits
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let maxLength = 4
         let currentString: NSString = textField.text! as NSString

@@ -20,11 +20,6 @@ class SearchViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Navigation
-    @IBAction func GoToLogin(_ sender: Any) {
-        performSegue(withIdentifier: "SearchToLogin", sender: self)
-    }
 
    /*
     // MARK: - Navigation
