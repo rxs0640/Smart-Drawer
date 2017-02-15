@@ -15,6 +15,9 @@
 		4F7832831E0D29EC002D5708 /* Smart_DrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7832821E0D29EC002D5708 /* Smart_DrawerTests.swift */; };
 		4F78328E1E0D29EC002D5708 /* Smart_DrawerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78328D1E0D29EC002D5708 /* Smart_DrawerUITests.swift */; };
 		842864BD1E3AFE8F00413C79 /* UserDashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842864BC1E3AFE8F00413C79 /* UserDashViewController.swift */; };
+		849A7D901E54CF1300B43CC1 /* EditConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */; };
+		849A7D921E54CF2300B43CC1 /* RcvMedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D911E54CF2300B43CC1 /* RcvMedsViewController.swift */; };
+		849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */; };
 		84FAB9011E3AE0E100CA7614 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9001E3AE0E100CA7614 /* Condition.swift */; };
 		84FAB9041E3AED0B00CA7614 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9031E3AED0B00CA7614 /* SearchViewController.swift */; };
 		84FAB9061E3AEF6E00CA7614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */; };
@@ -52,6 +55,9 @@
 		4F78328D1E0D29EC002D5708 /* Smart_DrawerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_DrawerUITests.swift; sourceTree = "<group>"; };
 		4F78328F1E0D29EC002D5708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		842864BC1E3AFE8F00413C79 /* UserDashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDashViewController.swift; sourceTree = "<group>"; };
+		849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditConditionsViewController.swift; sourceTree = "<group>"; };
+		849A7D911E54CF2300B43CC1 /* RcvMedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RcvMedsViewController.swift; sourceTree = "<group>"; };
+		849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccOptionsViewController.swift; sourceTree = "<group>"; };
 		84FAB9001E3AE0E100CA7614 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		84FAB9031E3AED0B00CA7614 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -134,9 +140,20 @@
 			path = "Smart-DrawerUITests";
 			sourceTree = "<group>";
 		};
+		849A7D951E54CF3400B43CC1 /* Account Related */ = {
+			isa = PBXGroup;
+			children = (
+				849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */,
+				849A7D911E54CF2300B43CC1 /* RcvMedsViewController.swift */,
+				849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */,
+			);
+			name = "Account Related";
+			sourceTree = "<group>";
+		};
 		84FAB9021E3AECF400CA7614 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				849A7D951E54CF3400B43CC1 /* Account Related */,
 				4F78326F1E0D29EC002D5708 /* ViewController.swift */,
 				84FAB9031E3AED0B00CA7614 /* SearchViewController.swift */,
 				84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */,
@@ -283,11 +300,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7832701E0D29EC002D5708 /* ViewController.swift in Sources */,
+				849A7D921E54CF2300B43CC1 /* RcvMedsViewController.swift in Sources */,
 				84FAB9011E3AE0E100CA7614 /* Condition.swift in Sources */,
 				84FAB9041E3AED0B00CA7614 /* SearchViewController.swift in Sources */,
+				849A7D901E54CF1300B43CC1 /* EditConditionsViewController.swift in Sources */,
 				84FAB9061E3AEF6E00CA7614 /* LoginViewController.swift in Sources */,
 				4F78326E1E0D29EC002D5708 /* AppDelegate.swift in Sources */,
 				842864BD1E3AFE8F00413C79 /* UserDashViewController.swift in Sources */,
+				849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

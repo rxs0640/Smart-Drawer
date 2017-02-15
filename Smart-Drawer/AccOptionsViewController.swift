@@ -1,14 +1,14 @@
 //
-//  SearchViewController.swift
+//  AccOptionsViewController.swift
 //  Smart-Drawer
 //
-//  Created by Admin on 1/26/17.
+//  Created by Admin on 2/15/17.
 //  Copyright © 2017 Sr. Project. All rights reserved.
 //
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class AccOptionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,21 +20,20 @@ class SearchViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-   
+    
     // MARK: - Navigation
-    @IBAction func BackToHome(_ sender: Any) {
-        performSegue(withIdentifier: "SearchToHome", sender: self)
+    @IBAction func ReturnToDash(_ sender: Any) {
+        performSegue(withIdentifier: "OptionsToDash", sender: self)
     }
 
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        if segue.identifier == "SearchToLogin" {
-            let vc = segue.destination as! LoginViewController
-        }
-        
-        }
-     */
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
