@@ -11,7 +11,6 @@ import UIKit
 class UserDashViewController: UIViewController {
 
     // MARK - init
-    @IBOutlet weak var editbtn: UIButton!
     @IBOutlet weak var rcvmedbtn: UIButton!
     @IBOutlet weak var accoptbtn: UIButton!
     @IBOutlet weak var titlebar: UINavigationItem!
@@ -23,10 +22,6 @@ class UserDashViewController: UIViewController {
         //Create Title label
         titlebar.title = "Welcome, USERNAME"
         //Create button labels
-        editbtn.titleLabel?.textAlignment = NSTextAlignment.center
-        editbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        editbtn.setTitle("Edit\nConditions", for: .normal)
-        
         rcvmedbtn.titleLabel?.textAlignment = NSTextAlignment.center
         rcvmedbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         rcvmedbtn.setTitle("Receive\nMedicine", for: .normal)
@@ -47,9 +42,6 @@ class UserDashViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    @IBAction func GoToEditCond(_ sender: Any) {
-        performSegue(withIdentifier: "DashToEdit", sender: self)
-    }
     
     @IBAction func GoToMedSel(_ sender: Any) {
         performSegue(withIdentifier: "DashToSelect", sender: self)
