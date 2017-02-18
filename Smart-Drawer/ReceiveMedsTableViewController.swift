@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class ReceiveMedsTableViewController: UITableViewController {
 
+    // MARK: - Properties
+    var items: [UserConditions] = []
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

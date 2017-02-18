@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct UserCondition {
+struct UserConditions {
     let key: String
     let name: String
     let user: String
