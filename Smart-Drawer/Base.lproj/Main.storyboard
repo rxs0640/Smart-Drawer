@@ -195,7 +195,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMV-KQ-Uxi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMV-KQ-Uxi">
                                 <rect key="frame" x="33" y="226" width="308" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -209,7 +209,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-Cg-wId">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-Cg-wId">
                                 <rect key="frame" x="33" y="318" width="308" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -343,6 +343,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="cMD-8h-PDl"/>
+                    <connections>
+                        <segue destination="8me-6i-NUL" kind="show" identifier="ReceiveToDash" id="YbH-L3-wXN"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="3705" y="1071"/>
@@ -357,7 +360,6 @@
                     </navigationBar>
                     <connections>
                         <segue destination="NZL-eb-PF5" kind="relationship" relationship="rootViewController" id="PVa-W7-NjJ"/>
-                        <segue destination="8me-6i-NUL" kind="show" identifier="ReceiveToDash" id="sck-uV-stu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqa-5b-R6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -461,8 +463,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yej-ka-0QR"/>
+        <segue reference="tPP-Ir-Kv9"/>
         <segue reference="SgB-PQ-HQJ"/>
-        <segue reference="sck-uV-stu"/>
+        <segue reference="AaN-Bj-Cun"/>
     </inferredMetricsTieBreakers>
 </document>

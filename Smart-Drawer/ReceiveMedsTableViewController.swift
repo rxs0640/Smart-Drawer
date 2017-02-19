@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 
 class ReceiveMedsTableViewController: UITableViewController {
-
+    
     // MARK: - Properties
+    let ref = FIRDatabase.database().reference(withPath: "userCondition-items")
     var items: [UserConditions] = []
     var user: User!
     
@@ -22,7 +23,11 @@ class ReceiveMedsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        self.title = "Receive Medication"
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(BackBtnActn))
+        user = User(uid: "001", email: "Testemail")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +44,7 @@ class ReceiveMedsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
     
@@ -79,14 +84,58 @@ class ReceiveMedsTableViewController: UITableViewController {
     }
     */
 
-    // MARK: - Navigation
-    
-    @IBAction func EditCond(_ sender: Any) {
+    // MARK: - Actions
+    func addItem(_ sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Condition",
+                                      message: "Add a new condition",
+                                      preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let textField = alert.textFields?.first,
+                let text = textField.text else{return}
+            
+            let userCondition = UserConditions(name: text,
+                                               user: self.user.email)
+            
+            let userConditionRef = self.ref.child(text.lowercased())
+            
+            userConditionRef.setValue(userCondition.toAnyObject())
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        alert.addTextField()
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func BackBtnActn(_ sender: Any) {
-        performSegue(withIdentifier: "DashToSelect", sender: self)
+    func BackBtnActn(_ sender: AnyObject) {
+        performSegue(withIdentifier: "ReceiveToDash", sender: self)
     }
+    
+    func Done(_ sender: AnyObject) {
+        self.setEditing(false, animated: true)
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+    
+        if(editing == true) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(addItem))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(Done))
+        }
+        else  {
+            self.navigationItem.rightBarButtonItem = self.editButtonItem
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(BackBtnActn))
+        }
+    }
+    
+
     
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
