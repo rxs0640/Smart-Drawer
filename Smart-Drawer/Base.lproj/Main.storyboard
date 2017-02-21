@@ -76,7 +76,7 @@
         <!--Root View Controller-->
         <scene sceneID="RKh-KX-nLV">
             <objects>
-                <tableViewController id="ZJL-2h-apg" sceneMemberID="viewController">
+                <tableViewController id="ZJL-2h-apg" customClass="ConditionsListTableViewController" customModule="Smart_Drawer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4mR-Zd-JmV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

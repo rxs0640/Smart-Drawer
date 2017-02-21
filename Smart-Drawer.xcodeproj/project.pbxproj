@@ -25,7 +25,6 @@
 		843A90AA1E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
 		849A7D901E54CF1300B43CC1 /* EditConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */; };
 		849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */; };
-		84FAB9041E3AED0B00CA7614 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9031E3AED0B00CA7614 /* SearchViewController.swift */; };
 		84FAB9061E3AEF6E00CA7614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */; };
 		9D4888F3F9786B5AD450BB45 /* Pods_Smart_DrawerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4359ECA8899D90C939D28F7 /* Pods_Smart_DrawerUITests.framework */; };
 		BBFD4F436FCB97ED01C948C9 /* Pods_Smart_DrawerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E078E819BC58B4D0864FDB95 /* Pods_Smart_DrawerTests.framework */; };
@@ -72,7 +71,6 @@
 		843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deps/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditConditionsViewController.swift; sourceTree = "<group>"; };
 		849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccOptionsViewController.swift; sourceTree = "<group>"; };
-		84FAB9031E3AED0B00CA7614 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9F0290FC286BFFE20532093 /* Pods-Smart-Drawer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart-Drawer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart-Drawer/Pods-Smart-Drawer.debug.xcconfig"; sourceTree = "<group>"; };
 		B8A1FC2076ED44E0AB080245 /* Pods-Smart-DrawerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart-DrawerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart-DrawerUITests/Pods-Smart-DrawerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				849A7D951E54CF3400B43CC1 /* Account Related */,
 				4F78326F1E0D29EC002D5708 /* ViewController.swift */,
 				84263D431E58F4C6005BFE09 /* ConditionsListTableViewController.swift */,
-				84FAB9031E3AED0B00CA7614 /* SearchViewController.swift */,
 				84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */,
 				842864BC1E3AFE8F00413C79 /* UserDashViewController.swift */,
 			);
@@ -506,7 +503,6 @@
 				4F7832701E0D29EC002D5708 /* ViewController.swift in Sources */,
 				84263D4B1E58FC21005BFE09 /* UserConditions.swift in Sources */,
 				84263D461E58F54D005BFE09 /* ConditionItem.swift in Sources */,
-				84FAB9041E3AED0B00CA7614 /* SearchViewController.swift in Sources */,
 				849A7D901E54CF1300B43CC1 /* EditConditionsViewController.swift in Sources */,
 				84263D481E58F860005BFE09 /* ReceiveMedsTableViewController.swift in Sources */,
 				84FAB9061E3AEF6E00CA7614 /* LoginViewController.swift in Sources */,
