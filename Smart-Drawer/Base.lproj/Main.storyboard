@@ -64,8 +64,8 @@
                     <connections>
                         <outlet property="accountbtn" destination="Niy-Ty-GB8" id="sq9-cl-7Tw"/>
                         <outlet property="usrPIN" destination="ULU-Ql-aCO" id="tNQ-4Y-DUd"/>
-                        <segue destination="heY-KM-nnh" kind="show" identifier="PinToSearch" id="BI7-oW-FdD"/>
                         <segue destination="jls-sk-i1N" kind="show" identifier="HomeToAccount" id="Kmt-GZ-P91"/>
+                        <segue destination="5ok-C8-936" kind="show" identifier="PinToSearch" id="LxA-of-R0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,95 +73,53 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="rN7-ZY-VnZ">
+        <!--Root View Controller-->
+        <scene sceneID="RKh-KX-nLV">
             <objects>
-                <viewController title="Search" id="heY-KM-nnh" customClass="SearchViewController" customModule="Smart_Drawer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kVE-Fa-MSP"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAr-0f-NWh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q8P-ku-T51">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byk-Lq-z5i">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Smart Drawer" id="KD1-xy-JL8">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Nji-4v-vcZ">
-                                            <connections>
-                                                <action selector="BackToHome:" destination="heY-KM-nnh" id="Na6-FE-9Gz"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Enter Condition Here" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyr-Qg-5bl">
-                                <rect key="frame" x="1" y="83" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="yes" returnKeyType="go"/>
-                                <connections>
-                                    <outlet property="delegate" destination="heY-KM-nnh" id="mL2-JM-GTB"/>
-                                </connections>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="e3h-TM-xlV" id="jtO-9E-2Sf"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="SearchToHome" id="yej-ka-0QR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1In-3D-Xoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="7Qd-0j-Rg6">
-                    <connections>
-                        <outlet property="delegate" destination="heY-KM-nnh" id="96o-MT-JFy"/>
-                        <outlet property="searchContentsController" destination="heY-KM-nnh" id="2It-xq-WfL"/>
-                        <outlet property="searchResultsDataSource" destination="heY-KM-nnh" id="XaX-99-Lo7"/>
-                        <outlet property="searchResultsDelegate" destination="heY-KM-nnh" id="PmY-bA-IEK"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="e3h-TM-xlV">
-                    <connections>
-                        <outlet property="delegate" destination="heY-KM-nnh" id="Rfu-UM-r9a"/>
-                        <outlet property="searchBar" destination="gyr-Qg-5bl" id="tBf-X8-TQg"/>
-                        <outlet property="searchContentsController" destination="heY-KM-nnh" id="Me5-64-YKf"/>
-                        <outlet property="searchResultsDataSource" destination="heY-KM-nnh" id="ybK-8Z-tuE"/>
-                        <outlet property="searchResultsDelegate" destination="heY-KM-nnh" id="tsv-t0-IFt"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="138.98050974512745"/>
-        </scene>
-        <!--ConditionsTable-->
-        <scene sceneID="XDo-kM-VvF">
-            <objects>
-                <tableViewController title="ConditionsTable" id="PAl-Jg-wH5" customClass="ConditionsListTableViewController" customModule="Smart_Drawer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="o2p-RO-zVu">
+                <tableViewController id="ZJL-2h-apg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4mR-Zd-JmV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="puX-5E-bBy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1Er-gA-7tm">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="puX-5E-bBy" id="G4Y-YY-p4m">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Er-gA-7tm" id="k9h-nA-Ljl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="PAl-Jg-wH5" id="4C2-iw-4Uw"/>
-                            <outlet property="delegate" destination="PAl-Jg-wH5" id="DTI-BI-Q0w"/>
+                            <outlet property="dataSource" destination="ZJL-2h-apg" id="yv5-NY-geZ"/>
+                            <outlet property="delegate" destination="ZJL-2h-apg" id="Hqb-dt-W1M"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="jMV-eY-zFw"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SearchToHome" id="3X7-W0-uNj"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kOo-wD-8aW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tza-Ca-sZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="160"/>
+            <point key="canvasLocation" x="1967" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mAi-7g-B9z">
+            <objects>
+                <navigationController id="5ok-C8-936" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y5R-us-CS8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZJL-2h-apg" kind="relationship" relationship="rootViewController" id="n2m-8a-Bgn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J6u-qL-50R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095" y="139"/>
         </scene>
         <!--Login-->
         <scene sceneID="Rgl-jE-wLc">
@@ -321,7 +279,6 @@
         <!--Root View Controller-->
         <scene sceneID="UvV-1i-hAe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WyL-Fg-t8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="NZL-eb-PF5" customClass="ReceiveMedsTableViewController" customModule="Smart_Drawer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aYG-RP-KBR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -332,7 +289,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Vd-hf-IJd" id="SF1-6U-Oqx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -347,6 +304,7 @@
                         <segue destination="8me-6i-NUL" kind="show" identifier="ReceiveToDash" id="YbH-L3-wXN"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WyL-Fg-t8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3705" y="1071"/>
         </scene>
@@ -463,8 +421,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tPP-Ir-Kv9"/>
-        <segue reference="SgB-PQ-HQJ"/>
+        <segue reference="3X7-W0-uNj"/>
+        <segue reference="Kmt-GZ-P91"/>
         <segue reference="AaN-Bj-Cun"/>
     </inferredMetricsTieBreakers>
 </document>
