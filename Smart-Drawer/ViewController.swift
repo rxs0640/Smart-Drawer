@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // Init View
     @IBOutlet weak var usrPIN: UITextField!
     @IBOutlet weak var accountbtn: UIButton!
+    @IBOutlet weak var btbtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         accountbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         accountbtn.titleLabel?.textAlignment = NSTextAlignment.center
         accountbtn.setTitle("Minor Emergency?\nLog In or Create Account", for: .normal)
+        
+        // Change Bluetooth connect button text
+        btbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        btbtn.titleLabel?.textAlignment = NSTextAlignment.center
+        btbtn.setTitle("1. connect to bluetooth here", for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +64,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func GoToAcc(_ sender: Any) {
         
     performSegue(withIdentifier: "HomeToAccount", sender: self)
+    }
+    @IBAction func GoToBT(_ sender: Any) {
+    performSegue(withIdentifier: "DEBUGBTCON", sender: self)
     }
     
     // Limits text field to 4 digits

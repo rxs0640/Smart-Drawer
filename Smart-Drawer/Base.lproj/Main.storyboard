@@ -21,13 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Smart Drawer! To get started, insert the 4 digit pin received by the operator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1X-iS-phT">
-                                <rect key="frame" x="72" y="146" width="230" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert PIN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ULU-Ql-aCO">
                                 <rect key="frame" x="139" y="318" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,6 +47,22 @@
                                     <action selector="GoToAcc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EZ-gH-0om"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XM-aa-PKH">
+                                <rect key="frame" x="152" y="269" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="btconnect"/>
+                                <connections>
+                                    <action selector="GoToBT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XIj-wa-8an"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1X-iS-phT">
+                                <rect key="frame" x="72" y="108" width="230" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Welcome to the Smart Drawer! To get started, please connect your devices to the drawer via bluetooth and insert the 4 digit pin received by the operator</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -63,15 +72,65 @@
                     </view>
                     <connections>
                         <outlet property="accountbtn" destination="Niy-Ty-GB8" id="sq9-cl-7Tw"/>
+                        <outlet property="btbtn" destination="9XM-aa-PKH" id="tBh-Wp-wqT"/>
                         <outlet property="usrPIN" destination="ULU-Ql-aCO" id="tNQ-4Y-DUd"/>
                         <segue destination="heY-KM-nnh" kind="show" identifier="PinToSearch" id="BI7-oW-FdD"/>
                         <segue destination="jls-sk-i1N" kind="show" identifier="HomeToAccount" id="Kmt-GZ-P91"/>
+                        <segue destination="ZJk-2C-dct" kind="show" identifier="DEBUGBTCON" id="ZEl-U7-Npg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="sWX-cj-zrv"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="f8j-kh-nWp">
+            <objects>
+                <tableViewController id="DmI-AG-H9F" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qPs-aW-y8i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lcj-C5-NRh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lcj-C5-NRh" id="7iF-M6-z5g">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DmI-AG-H9F" id="A3a-Mo-DDr"/>
+                            <outlet property="delegate" destination="DmI-AG-H9F" id="blY-cs-Tc4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="YmW-gU-jHy"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="hEW-zY-hxg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90w-9g-xJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="-700"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SqV-7A-DQf">
+            <objects>
+                <navigationController id="ZJk-2C-dct" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kIG-PP-jd8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DmI-AG-H9F" kind="relationship" relationship="rootViewController" id="8X7-Wr-z4E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7J-ih-2Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-385" y="-700"/>
         </scene>
         <!--Search-->
         <scene sceneID="rN7-ZY-VnZ">
@@ -339,7 +398,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5C8-R7-KX3" id="Ceq-Iw-rAA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a condition from the list below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2x-KB-WlU">
@@ -500,10 +559,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tPP-Ir-Kv9"/>
-        <segue reference="Kmt-GZ-P91"/>
         <segue reference="RtI-On-G2E"/>
         <segue reference="pw8-hu-I6B"/>
         <segue reference="X8C-8m-8za"/>
+        <segue reference="hEW-zY-hxg"/>
+        <segue reference="Kmt-GZ-P91"/>
     </inferredMetricsTieBreakers>
 </document>
