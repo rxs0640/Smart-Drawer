@@ -28,6 +28,18 @@ class ReceiveMedsTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(BackBtnActn))
         user = User(uid: "001", email: "Testemail")
         
+        ref.observe(.value, with: { snapshot in
+            var newItem: [UserConditions] = []
+            
+            for item in snapshot.children {
+                let conditionItem = UserConditions(snapshot: item as! FIRDataSnapshot)
+                newItem.append(conditionItem)
+            }
+            
+            self.items = newItem
+            self.tableView.reloadData()
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,12 +48,6 @@ class ReceiveMedsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return items.count
@@ -67,22 +73,6 @@ class ReceiveMedsTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Actions
     func addItem(_ sender: AnyObject) {
@@ -96,8 +86,10 @@ class ReceiveMedsTableViewController: UITableViewController {
                 let text = textField.text else{return}
             
             let userCondition = UserConditions(name: text,
-                                               user: self.user.email)
-            
+                                               user: self.user.email,
+                                               loc:0 )
+            self.items.append(userCondition)
+            self.tableView.reloadData()
             let userConditionRef = self.ref.child(text.lowercased())
             
             userConditionRef.setValue(userCondition.toAnyObject())
