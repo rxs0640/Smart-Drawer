@@ -23,6 +23,7 @@
 		843A90A81E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
 		843A90A91E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
 		843A90AA1E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
+		848C5DE51E7F2AC900416F29 /* AccCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C5DE41E7F2AC900416F29 /* AccCreateViewController.swift */; };
 		849A7D901E54CF1300B43CC1 /* EditConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */; };
 		849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */; };
 		84FAB9061E3AEF6E00CA7614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */; };
@@ -69,8 +70,10 @@
 		84263D4C1E58FE81005BFE09 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		842864BC1E3AFE8F00413C79 /* UserDashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDashViewController.swift; sourceTree = "<group>"; };
 		843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deps/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		848C5DE41E7F2AC900416F29 /* AccCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccCreateViewController.swift; sourceTree = "<group>"; };
 		849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditConditionsViewController.swift; sourceTree = "<group>"; };
 		849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccOptionsViewController.swift; sourceTree = "<group>"; };
+		84E32A4A1E7F28650071F288 /* Smart-Drawer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smart-Drawer.entitlements"; sourceTree = "<group>"; };
 		84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9F0290FC286BFFE20532093 /* Pods-Smart-Drawer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart-Drawer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart-Drawer/Pods-Smart-Drawer.debug.xcconfig"; sourceTree = "<group>"; };
 		B8A1FC2076ED44E0AB080245 /* Pods-Smart-DrawerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart-DrawerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart-DrawerUITests/Pods-Smart-DrawerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 		4F78326C1E0D29EC002D5708 /* Smart-Drawer */ = {
 			isa = PBXGroup;
 			children = (
+				84E32A4A1E7F28650071F288 /* Smart-Drawer.entitlements */,
 				84FAB9021E3AECF400CA7614 /* View Controllers */,
 				4F78326D1E0D29EC002D5708 /* AppDelegate.swift */,
 				4F7832711E0D29EC002D5708 /* Main.storyboard */,
@@ -184,6 +188,7 @@
 				849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */,
 				849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */,
 				84263D471E58F860005BFE09 /* ReceiveMedsTableViewController.swift */,
+				848C5DE41E7F2AC900416F29 /* AccCreateViewController.swift */,
 			);
 			name = "Account Related";
 			sourceTree = "<group>";
@@ -292,6 +297,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2G2J7L3W3L;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					4F78327D1E0D29EC002D5708 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -510,6 +520,7 @@
 				84263D4D1E58FE81005BFE09 /* User.swift in Sources */,
 				842864BD1E3AFE8F00413C79 /* UserDashViewController.swift in Sources */,
 				849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */,
+				848C5DE51E7F2AC900416F29 /* AccCreateViewController.swift in Sources */,
 				84263D441E58F4C6005BFE09 /* ConditionsListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +672,7 @@
 			baseConfigurationReference = A9F0290FC286BFFE20532093 /* Pods-Smart-Drawer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Smart-Drawer/Smart-Drawer.entitlements";
 				DEVELOPMENT_TEAM = 2G2J7L3W3L;
 				INFOPLIST_FILE = "Smart-Drawer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -676,6 +688,7 @@
 			baseConfigurationReference = DBC00F7D8F6BAC91BFE5909B /* Pods-Smart-Drawer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Smart-Drawer/Smart-Drawer.entitlements";
 				DEVELOPMENT_TEAM = 2G2J7L3W3L;
 				INFOPLIST_FILE = "Smart-Drawer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
