@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class UserDashViewController: UIViewController {
 
+    // MARK - Properties
+    var users: User!
+    let usersRef = FIRDatabase.database().reference (withPath: "Online")
+    
     // MARK - init
     @IBOutlet weak var rcvmedbtn: UIButton!
     @IBOutlet weak var accoptbtn: UIButton!
@@ -17,8 +22,16 @@ class UserDashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        FIRAuth.auth()!.addStateDidChangeListener {
+            auth, user in
+            guard let user = user else { return }
+            self.users = User(authData: user)
+            let currentUserRef = self.usersRef.child(self.users.uid)
+            currentUserRef.setValue(self.users.email)
+            currentUserRef.onDisconnectRemoveValue()
+        }
+        
         //Create Title label
         titlebar.title = "Welcome, USERNAME"
         //Create button labels
@@ -52,12 +65,17 @@ class UserDashViewController: UIViewController {
     }
     
     
-    /*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
+        if (segue.identifier == "DashToSelect") {
+            let nav = segue.destination as! UINavigationController
+            let svc = nav.topViewController as! ReceiveMedsTableViewController
+            svc.user = self.users as User
+    
+        }
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

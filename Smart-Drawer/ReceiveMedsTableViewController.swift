@@ -18,15 +18,15 @@ class ReceiveMedsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        
         self.title = "Receive Medication"
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+            self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(BackBtnActn))
-        user = User(uid: "001", email: "Testemail")
         
         ref.observe(.value, with: { snapshot in
             var newItem: [UserConditions] = []
