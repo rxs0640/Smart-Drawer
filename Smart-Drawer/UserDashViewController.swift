@@ -33,7 +33,8 @@ class UserDashViewController: UIViewController {
         }
         
         //Create Title label
-        titlebar.title = "Welcome, USERNAME"
+        let username = FIRAuth.auth()?.currentUser?.email
+        titlebar.title = "Welcome, " + username!
         //Create button labels
         rcvmedbtn.titleLabel?.textAlignment = NSTextAlignment.center
         rcvmedbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping

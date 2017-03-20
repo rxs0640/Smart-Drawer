@@ -15,6 +15,7 @@ class ReceiveMedsTableViewController: UITableViewController {
     let ref = FIRDatabase.database().reference(withPath: "userCondition-items")
     var items: [UserConditions] = []
     var user: User!
+    let current_user = FIRAuth.auth()?.currentUser?.email
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,9 @@ class ReceiveMedsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         
         self.title = "Receive Medication"
-        
+        if (current_user == "username@firebase.com") {
             self.navigationItem.rightBarButtonItem = self.editButtonItem
+        }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(BackBtnActn))
         
         ref.observe(.value, with: { snapshot in

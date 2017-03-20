@@ -23,7 +23,6 @@
 		843A90A81E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
 		843A90A91E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
 		843A90AA1E5690B70069A5B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */; };
-		848C5DE51E7F2AC900416F29 /* AccCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C5DE41E7F2AC900416F29 /* AccCreateViewController.swift */; };
 		849A7D901E54CF1300B43CC1 /* EditConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */; };
 		849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */; };
 		84FAB9061E3AEF6E00CA7614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAB9051E3AEF6E00CA7614 /* LoginViewController.swift */; };
@@ -70,7 +69,6 @@
 		84263D4C1E58FE81005BFE09 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		842864BC1E3AFE8F00413C79 /* UserDashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDashViewController.swift; sourceTree = "<group>"; };
 		843A90A71E5690B70069A5B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deps/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		848C5DE41E7F2AC900416F29 /* AccCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccCreateViewController.swift; sourceTree = "<group>"; };
 		849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditConditionsViewController.swift; sourceTree = "<group>"; };
 		849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccOptionsViewController.swift; sourceTree = "<group>"; };
 		84E32A4A1E7F28650071F288 /* Smart-Drawer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smart-Drawer.entitlements"; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				849A7D8F1E54CF1300B43CC1 /* EditConditionsViewController.swift */,
 				849A7D931E54CF2F00B43CC1 /* AccOptionsViewController.swift */,
 				84263D471E58F860005BFE09 /* ReceiveMedsTableViewController.swift */,
-				848C5DE41E7F2AC900416F29 /* AccCreateViewController.swift */,
 			);
 			name = "Account Related";
 			sourceTree = "<group>";
@@ -520,7 +517,6 @@
 				84263D4D1E58FE81005BFE09 /* User.swift in Sources */,
 				842864BD1E3AFE8F00413C79 /* UserDashViewController.swift in Sources */,
 				849A7D941E54CF2F00B43CC1 /* AccOptionsViewController.swift in Sources */,
-				848C5DE51E7F2AC900416F29 /* AccCreateViewController.swift in Sources */,
 				84263D441E58F4C6005BFE09 /* ConditionsListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
