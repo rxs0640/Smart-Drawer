@@ -38,7 +38,12 @@ class UserDashViewController: UIViewController {
         //Create button labels
         rcvmedbtn.titleLabel?.textAlignment = NSTextAlignment.center
         rcvmedbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        rcvmedbtn.setTitle("Receive\nMedicine", for: .normal)
+        if (username == "username@firebase.com") {
+            rcvmedbtn.setTitle("Edit\nConditions", for: .normal)
+        }
+        else {
+            rcvmedbtn.setTitle("Receive\nMedicine", for: .normal)
+        }
         
         accoptbtn.titleLabel?.textAlignment = NSTextAlignment.center
         accoptbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
