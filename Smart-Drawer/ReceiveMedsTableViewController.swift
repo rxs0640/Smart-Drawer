@@ -86,10 +86,12 @@ class ReceiveMedsTableViewController: UITableViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             guard let textField = alert.textFields?.first,
                 let text = textField.text else{return}
+            guard let locField = alert.textFields?[1],
+                let location: Int? = Int(locField.text!) else{return}
             
             let userCondition = UserConditions(name: text,
                                                user: self.user.email,
-                                               loc:0 )
+                                               loc: location!)
             self.items.append(userCondition)
             self.tableView.reloadData()
             let userConditionRef = self.ref.child(text.lowercased())
@@ -99,7 +101,13 @@ class ReceiveMedsTableViewController: UITableViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .default)
-        alert.addTextField()
+        alert.addTextField {
+            textCondition in textCondition.placeholder = "Enter a condition"
+        }
+        alert.addTextField {
+            textLocation in textLocation.placeholder = "Enter drawer number"
+            textLocation.keyboardType = .numberPad
+        }
         
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
