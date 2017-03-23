@@ -71,7 +71,8 @@ class ReceiveMedsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            items.remove(at: indexPath.row)
+            let userCondition = items[indexPath.row]
+            userCondition.ref?.removeValue()
             tableView.reloadData()
         }
     }
