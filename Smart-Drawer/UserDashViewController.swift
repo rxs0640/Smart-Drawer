@@ -7,29 +7,43 @@
 //
 
 import UIKit
+import Firebase
 
 class UserDashViewController: UIViewController {
 
+    // MARK - Properties
+    var users: User!
+    let usersRef = FIRDatabase.database().reference (withPath: "Online")
+    
     // MARK - init
-    @IBOutlet weak var editbtn: UIButton!
     @IBOutlet weak var rcvmedbtn: UIButton!
     @IBOutlet weak var accoptbtn: UIButton!
     @IBOutlet weak var titlebar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        //Create Title label
-        titlebar.title = "Welcome, USERNAME"
-        //Create button labels
-        editbtn.titleLabel?.textAlignment = NSTextAlignment.center
-        editbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        editbtn.setTitle("Edit\nConditions", for: .normal)
+        FIRAuth.auth()!.addStateDidChangeListener {
+            auth, user in
+            guard let user = user else { return }
+            self.users = User(authData: user)
+            let currentUserRef = self.usersRef.child(self.users.uid)
+            currentUserRef.setValue(self.users.email)
+            currentUserRef.onDisconnectRemoveValue()
+        }
         
+        //Create Title label
+        let username = FIRAuth.auth()?.currentUser?.email
+        titlebar.title = "Welcome, " + username!
+        //Create button labels
         rcvmedbtn.titleLabel?.textAlignment = NSTextAlignment.center
         rcvmedbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        rcvmedbtn.setTitle("Receive\nMedicine", for: .normal)
+        if (username == "username@firebase.com") {
+            rcvmedbtn.setTitle("Edit\nConditions", for: .normal)
+        }
+        else {
+            rcvmedbtn.setTitle("Receive\nMedicine", for: .normal)
+        }
         
         accoptbtn.titleLabel?.textAlignment = NSTextAlignment.center
         accoptbtn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -47,9 +61,6 @@ class UserDashViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    @IBAction func GoToEditCond(_ sender: Any) {
-        performSegue(withIdentifier: "DashToEdit", sender: self)
-    }
     
     @IBAction func GoToMedSel(_ sender: Any) {
         performSegue(withIdentifier: "DashToSelect", sender: self)
@@ -60,12 +71,17 @@ class UserDashViewController: UIViewController {
     }
     
     
-    /*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
+        if (segue.identifier == "DashToSelect") {
+            let nav = segue.destination as! UINavigationController
+            let svc = nav.topViewController as! ReceiveMedsTableViewController
+            svc.user = self.users as User
+    
+        }
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
